@@ -1,22 +1,55 @@
 import { Nav, Navbar, NavLink } from "react-bootstrap";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/netflix_logo.png";
 import { BsSearch, BsBellFill } from "react-icons/bs";
 import avatar from "../assets/avatar.png";
 
 const MyNav = () => {
+  const location = useLocation();
+
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark" className="">
-      <Navbar.Brand href="#home">
-        <img id="logo" src={logo} alt="netflix logo" />
-      </Navbar.Brand>
+      <Link to="/">
+        <Navbar.Brand>
+          <img id="logo" src={logo} alt="netflix logo" />
+        </Navbar.Brand>
+      </Link>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#">Home</Nav.Link>
-          <Nav.Link href="#">Tv Shows</Nav.Link>
+          <Link to="/">
+            <div
+              className={
+                location.pathname === "/" ? "nav-link active" : "nav-link"
+              }
+            >
+              Home
+            </div>
+          </Link>
+          <Link to="/tvShows">
+            <div
+              className={
+                location.pathname === "/tvShows"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
+            >
+              Tv Shows
+            </div>
+          </Link>
           <Nav.Link href="#">Movies</Nav.Link>
           <Nav.Link href="#">Recently Added</Nav.Link>
-          <Nav.Link href="#">Back Office</Nav.Link>
+          <Link to="/details/:movieId">
+            <div
+              className={
+                location.pathname === "/details/:movieId"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
+            >
+              Details
+            </div>
+          </Link>
         </Nav>
         <Nav className="ml-auto">
           <Nav.Link href="#">

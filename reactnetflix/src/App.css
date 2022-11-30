@@ -29,6 +29,10 @@
   color: #61dafb;
 }
 
+#responsive-navbar-nav > div.mr-auto.navbar-nav > a:hover {
+  text-decoration: none;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

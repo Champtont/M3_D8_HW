@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Col, Card } from "react-bootstrap";
+import { Col, Card, Button } from "react-bootstrap";
 
 class SingleMovie extends Component {
   render() {
@@ -11,6 +11,9 @@ class SingleMovie extends Component {
             src={this.props.src}
             style={{ height: "350px" }}
           />
+          <Card.Body>
+            <Button variant="success">Details</Button>
+          </Card.Body>
         </Card>
       </Col>
     );
