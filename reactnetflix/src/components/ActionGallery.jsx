@@ -67,6 +67,7 @@ class ActionGallery extends Component {
                 return (
                   <SingleMovie
                     key={movie.imdbID}
+                    id={movie.imdbID}
                     src={movie.Poster}
                     text={movie.Title}
                   ></SingleMovie>
