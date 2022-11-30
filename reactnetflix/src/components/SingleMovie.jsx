@@ -1,23 +1,16 @@
-import { Component } from "react";
 import { Col, Card, Button } from "react-bootstrap";
 
-class SingleMovie extends Component {
-  render() {
-    return (
-      <Col xs={12} md={2}>
-        <Card>
-          <Card.Img
-            variant="top"
-            src={this.props.src}
-            style={{ height: "350px" }}
-          />
-          <Card.Body>
-            <Button variant="success">Details</Button>
-          </Card.Body>
-        </Card>
-      </Col>
-    );
-  }
-}
+const SingleMovie = (props) => {
+  return (
+    <Col xs={12} md={2}>
+      <Card>
+        <Card.Img variant="top" src={props.src} style={{ height: "350px" }} />
+        <Card.Body>
+          <Button variant="success">Details</Button>
+        </Card.Body>
+      </Card>
+    </Col>
+  );
+};
 
 export default SingleMovie;
